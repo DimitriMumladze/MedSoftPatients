@@ -119,5 +119,14 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\01_Schema.sql" />
+    <Content Include="Database\02_SeedData.sql" />
+    <Content Include="Database\usp_GetGenders.sql" />
+    <Content Include="Database\usp_GetPatients.sql" />
+    <Content Include="Database\usp_AddPatient.sql" />
+    <Content Include="Database\usp_UpdatePatient.sql" />
+    <Content Include="Database\usp_DeletePatient.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
