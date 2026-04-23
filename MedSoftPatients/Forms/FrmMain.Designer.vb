@@ -78,6 +78,8 @@ Partial Class FrmMain
         Me.dgvPatients.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvPatients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvPatients.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvPatients.EnableHeadersVisualStyles = False
+        Me.dgvPatients.GridColor = System.Drawing.SystemColors.ControlLight
         Me.dgvPatients.Location = New System.Drawing.Point(0, 50)
         Me.dgvPatients.MultiSelect = False
         Me.dgvPatients.Name = "dgvPatients"
@@ -99,7 +101,7 @@ Partial Class FrmMain
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.pnlTop)
         Me.Font = New System.Drawing.Font("Sylfaen", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.MinimumSize = New System.Drawing.Size(800, 500)
