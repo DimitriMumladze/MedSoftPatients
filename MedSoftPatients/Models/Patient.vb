@@ -1,4 +1,4 @@
-﻿Public Class Patienet
+﻿Public Class Patient
     Public Property ID As Integer
     Public Property FullName As String
     Public Property Dob As Date
