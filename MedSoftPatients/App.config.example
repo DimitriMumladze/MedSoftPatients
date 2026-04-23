@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+ეს არ არის რეალური კონფიგურაცია, რადგან მონაცემთა ბაზა შექმნილია ჩემს პერსონალურ vps სერვერზე !!!
+თუმცა ესაა ჩონჩხი თუ როგორი უნდა იყოს კონფიგურაცია ->
+უბრალოდ ჩაანაცვლეთ YOUR_SERVER_ADDRESS, YOUR_USERNAME და YOUR_PASSWORD შესაბამისი მონაცემებით და ყველაფერი მუშაობს !!!
+-->
+<configuration>
+	<startup>
+		<supportedRuntime version="v4.0"
+                          sku=".NETFramework,Version=v4.8" />
+	</startup>
+
+	<connectionStrings>
+		<add name="MedSoftDb"
+             connectionString="Server=YOUR_SERVER_ADDRESS;Database=MedSoftPatients;User Id=YOUR_USERNAME;Password=YOUR_PASSWORD;TrustServerCertificate=True;"
+             providerName="System.Data.SqlClient" />
+	</connectionStrings>
+
+</configuration>

@@ -361,3 +361,12 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# App.config პაროლს შეიცავს — არ უნდა მოხვდეს git-ში.
+# სხვა დეველოპერმა უნდა დააკოპიროს App.config.example → App.config
+# და შეავსოს თავისი credentials-ით.
+App.config
+
+# Visual Studio user-specific ფაილები (უკვე ზემოთაც არის, მაგრამ
+# .suo ცალკე გვინდა რომ არ გაიტვირთოს)
+*.suo
