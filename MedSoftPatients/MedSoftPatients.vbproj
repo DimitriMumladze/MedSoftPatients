@@ -77,11 +77,11 @@
     <Compile Include="Data\DbConnectionFactory.vb" />
     <Compile Include="Data\GenderRepository.vb" />
     <Compile Include="Data\PatientRepository.vb" />
-    <Compile Include="Form1.vb">
+    <Compile Include="Forms\FrmMain.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Forms\FrmMain.Designer.vb">
+      <DependentUpon>FrmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Models\Gender.vb" />
@@ -103,8 +103,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmMain.resx">
+      <DependentUpon>FrmMain.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -134,6 +134,7 @@
     <Content Include="Database\usp_AddPatient.sql" />
     <Content Include="Database\usp_UpdatePatient.sql" />
     <Content Include="Database\usp_DeletePatient.sql" />
+    <None Include="Logo\logo-for-office-geo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
