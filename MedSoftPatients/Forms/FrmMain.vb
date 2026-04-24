@@ -20,6 +20,8 @@ Public Class FrmMain
 
             ConfigureColumns()
 
+            dgvPatients.ClearSelection()
+
         Catch ex As Exception
             MessageBox.Show("პაციენტების ჩატვირთვისას მოხდა შეცდომა:" & vbCrLf & vbCrLf & ex.Message,
                             "შეცდომა",
@@ -129,8 +131,8 @@ Public Class FrmMain
 
 
     Private Function GetSelectedPatient() As Patient
-        If dgvPatients.CurrentRow Is Nothing Then Return Nothing
-        Return TryCast(dgvPatients.CurrentRow.DataBoundItem, Patient)
+        If dgvPatients.SelectedRows.Count = 0 Then Return Nothing
+        Return TryCast(dgvPatients.SelectedRows(0).DataBoundItem, Patient)
     End Function
 
 End Class
