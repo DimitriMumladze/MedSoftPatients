@@ -92,8 +92,8 @@ Public Class FrmPatientEdit
 
         Dim phone As String = txtPhone.Text.Trim()
         If phone.Length > 0 Then
-            If phone.Length <> 9 OrElse Not phone.All(AddressOf Char.IsDigit) Then
-                ShowValidationError("მობ. ნომერი უნდა შედგებოდეს 9 ციფრისგან.", txtPhone)
+            If phone.Length <> 9 OrElse Not phone.All(AddressOf Char.IsDigit) OrElse Not phone.StartsWith("5") Then
+                ShowValidationError("მობ. ნომერი უნდა იწყებოდეს 5-ით და შედგებოდეს 9 ციფრისგან.", txtPhone)
                 Return False
             End If
         End If
