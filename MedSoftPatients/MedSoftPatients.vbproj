@@ -143,7 +143,9 @@
     <Content Include="Database\usp_AddPatient.sql" />
     <Content Include="Database\usp_UpdatePatient.sql" />
     <Content Include="Database\usp_DeletePatient.sql" />
-    <None Include="Logo\logo-for-office-geo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Icons\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -42,31 +42,46 @@ Partial Class FrmMain
         'btnAdd
         '
         Me.btnAdd.ForeColor = System.Drawing.Color.Green
+        Me.btnAdd.Image = Global.MedSoftPatients.My.Resources.Resources.add
+        Me.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAdd.Location = New System.Drawing.Point(10, 10)
         Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Padding = New System.Windows.Forms.Padding(6, 0, 0, 0)
         Me.btnAdd.Size = New System.Drawing.Size(130, 32)
         Me.btnAdd.TabIndex = 1
-        Me.btnAdd.Text = "➕ დამატება"
+        Me.btnAdd.Text = "დამატება"
+        Me.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAdd.UseVisualStyleBackColor = True
         '
         'btnEdit
         '
         Me.btnEdit.ForeColor = System.Drawing.Color.Olive
+        Me.btnEdit.Image = Global.MedSoftPatients.My.Resources.Resources.edit
+        Me.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnEdit.Location = New System.Drawing.Point(150, 10)
         Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Padding = New System.Windows.Forms.Padding(6, 0, 0, 0)
         Me.btnEdit.Size = New System.Drawing.Size(150, 32)
         Me.btnEdit.TabIndex = 2
-        Me.btnEdit.Text = "✏️ რედაქტირება"
+        Me.btnEdit.Text = "რედაქტირება"
+        Me.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnEdit.UseVisualStyleBackColor = True
         '
         'btnDelete
         '
         Me.btnDelete.ForeColor = System.Drawing.Color.Red
+        Me.btnDelete.Image = Global.MedSoftPatients.My.Resources.Resources.delete
+        Me.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnDelete.Location = New System.Drawing.Point(310, 10)
         Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Padding = New System.Windows.Forms.Padding(6, 0, 0, 0)
         Me.btnDelete.Size = New System.Drawing.Size(130, 32)
         Me.btnDelete.TabIndex = 3
-        Me.btnDelete.Text = "✖️ წაშლა"
+        Me.btnDelete.Text = "წაშლა"
+        Me.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnDelete.UseVisualStyleBackColor = True
         '
         'dgvPatients
