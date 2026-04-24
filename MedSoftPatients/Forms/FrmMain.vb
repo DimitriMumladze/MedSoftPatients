@@ -1,4 +1,4 @@
-﻿Public Class FrmMain
+Public Class FrmMain
 
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadPatients()
@@ -66,5 +66,71 @@
             End If
         End If
     End Sub
+
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        Using frm As New FrmPatientEdit()
+            If frm.ShowDialog(Me) = DialogResult.OK Then
+                LoadPatients()
+            End If
+        End Using
+    End Sub
+
+
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        Dim selected As Patient = GetSelectedPatient()
+        If selected Is Nothing Then
+            MessageBox.Show("გთხოვთ აირჩიოთ პაციენტი ცხრილიდან.", "ინფორმაცია",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Return
+        End If
+
+        Using frm As New FrmPatientEdit(selected)
+            If frm.ShowDialog(Me) = DialogResult.OK Then
+                LoadPatients()
+            End If
+        End Using
+    End Sub
+
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        Dim selected As Patient = GetSelectedPatient()
+        If selected Is Nothing Then
+            MessageBox.Show("გთხოვთ აირჩიოთ პაციენტი ცხრილიდან.", "ინფორმაცია",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Return
+        End If
+
+        Dim confirm As DialogResult = MessageBox.Show(
+            $"დარწმუნებული ხართ, რომ გსურთ პაციენტის ""{selected.FullName}"" წაშლა?",
+            "წაშლის დადასტურება",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question,
+            MessageBoxDefaultButton.Button2)
+
+        If confirm <> DialogResult.Yes Then Return
+
+        Try
+            PatientRepository.Delete(selected.ID)
+            LoadPatients()
+        Catch ex As Exception
+            MessageBox.Show("წაშლისას მოხდა შეცდომა:" & vbCrLf & vbCrLf & ex.Message,
+                            "შეცდომა", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+
+    Private Sub dgvPatients_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) _
+        Handles dgvPatients.CellDoubleClick
+
+        If e.RowIndex < 0 Then Return
+        btnEdit.PerformClick()
+    End Sub
+
+
+    Private Function GetSelectedPatient() As Patient
+        If dgvPatients.CurrentRow Is Nothing Then Return Nothing
+        Return TryCast(dgvPatients.CurrentRow.DataBoundItem, Patient)
+    End Function
 
 End Class
