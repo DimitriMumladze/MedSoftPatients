@@ -70,6 +70,12 @@ Public Class PatientRepository
             .GenderName = reader.GetString(reader.GetOrdinal("GenderName"))
         }
 
+        ' PersonalNumber nullable-ია DB-ში
+        Dim pnIdx As Integer = reader.GetOrdinal("PersonalNumber")
+        If Not reader.IsDBNull(pnIdx) Then
+            p.PersonalNumber = reader.GetString(pnIdx).Trim()
+        End If
+
         ' Phone და Address nullable-ია DB-ში
         Dim phoneIdx As Integer = reader.GetOrdinal("Phone")
         If Not reader.IsDBNull(phoneIdx) Then
@@ -89,6 +95,7 @@ Public Class PatientRepository
             cmd.Parameters.Add("@ID", SqlDbType.Int).Value = patient.ID
         End If
 
+        cmd.Parameters.Add("@PersonalNumber", SqlDbType.Char, 11).Value = ToDbValue(patient.PersonalNumber)
         cmd.Parameters.Add("@FullName", SqlDbType.NVarChar, 200).Value = patient.FullName
         cmd.Parameters.Add("@Dob", SqlDbType.Date).Value = patient.Dob
         cmd.Parameters.Add("@GenderID", SqlDbType.Int).Value = patient.GenderID

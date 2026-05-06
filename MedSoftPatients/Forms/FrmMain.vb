@@ -37,6 +37,7 @@ Public Class FrmMain
         dgvPatients.Columns("GenderID").Visible = False
 
         dgvPatients.Columns("ID").HeaderText = "ID"
+        dgvPatients.Columns("PersonalNumber").HeaderText = "პირადი ნომერი"
         dgvPatients.Columns("FullName").HeaderText = "პაციენტის გვარი სახელი"
         dgvPatients.Columns("Dob").HeaderText = "დაბ. თარიღი"
         dgvPatients.Columns("GenderName").HeaderText = "სქესი"
@@ -49,11 +50,12 @@ Public Class FrmMain
         dgvPatients.Columns("ID").Width = 50
 
         dgvPatients.Columns("ID").DisplayIndex = 0
-        dgvPatients.Columns("FullName").DisplayIndex = 1
-        dgvPatients.Columns("Dob").DisplayIndex = 2
-        dgvPatients.Columns("GenderName").DisplayIndex = 3
-        dgvPatients.Columns("Phone").DisplayIndex = 4
-        dgvPatients.Columns("Address").DisplayIndex = 5
+        dgvPatients.Columns("PersonalNumber").DisplayIndex = 1
+        dgvPatients.Columns("FullName").DisplayIndex = 2
+        dgvPatients.Columns("Dob").DisplayIndex = 3
+        dgvPatients.Columns("GenderName").DisplayIndex = 4
+        dgvPatients.Columns("Phone").DisplayIndex = 5
+        dgvPatients.Columns("Address").DisplayIndex = 6
     End Sub
 
 

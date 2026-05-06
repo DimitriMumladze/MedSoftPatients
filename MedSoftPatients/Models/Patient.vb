@@ -1,5 +1,6 @@
 ﻿Public Class Patient
     Public Property ID As Integer
+    Public Property PersonalNumber As String
     Public Property FullName As String
     Public Property Dob As Date
     Public Property GenderID As Integer

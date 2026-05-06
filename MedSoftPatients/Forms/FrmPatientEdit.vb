@@ -39,6 +39,7 @@ Public Class FrmPatientEdit
     End Sub
 
     Private Sub PopulateFields(patient As Patient)
+        txtPersonalNumber.Text = If(patient.PersonalNumber, String.Empty)
         Dim parts As String() = SplitFullName(patient.FullName)
         txtFirstName.Text = parts(0)
         txtLastName.Text = parts(1)
@@ -63,6 +64,16 @@ Public Class FrmPatientEdit
 
             Me.DialogResult = DialogResult.OK
             Me.Close()
+        Catch sqlEx As System.Data.SqlClient.SqlException When sqlEx.Number = 50001
+            MessageBox.Show("პაციენტი ამ პირადი ნომრით უკვე არსებობს ბაზაში.",
+                            "დუბლიკატი", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            txtPersonalNumber.Focus()
+            txtPersonalNumber.SelectAll()
+        Catch sqlEx As System.Data.SqlClient.SqlException When sqlEx.Number = 2627 OrElse sqlEx.Number = 2601
+            MessageBox.Show("პაციენტი ამ პირადი ნომრით უკვე არსებობს ბაზაში.",
+                            "დუბლიკატი", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            txtPersonalNumber.Focus()
+            txtPersonalNumber.SelectAll()
         Catch ex As Exception
             MessageBox.Show("შეცდომა შენახვისას: " & ex.Message, "შეცდომა",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -75,6 +86,14 @@ Public Class FrmPatientEdit
     End Sub
 
     Private Function ValidateInput() As Boolean
+        Dim pn As String = txtPersonalNumber.Text.Trim()
+        If pn.Length > 0 Then
+            If pn.Length <> 11 OrElse Not pn.All(AddressOf Char.IsDigit) Then
+                ShowValidationError("პირადი ნომერი უნდა შედგებოდეს 11 ციფრისგან.", txtPersonalNumber)
+                Return False
+            End If
+        End If
+
         If String.IsNullOrWhiteSpace(txtFirstName.Text) Then
             ShowValidationError("სახელი სავალდებულოა.", txtFirstName)
             Return False
@@ -108,6 +127,7 @@ Public Class FrmPatientEdit
 
     Private Function BuildPatientFromInput() As Patient
         Return New Patient() With {
+            .PersonalNumber = txtPersonalNumber.Text.Trim(),
             .FullName = (txtFirstName.Text.Trim() & " " & txtLastName.Text.Trim()).Trim(),
             .Dob = dtpDob.Value.Date,
             .GenderID = CInt(cmbGender.SelectedValue),

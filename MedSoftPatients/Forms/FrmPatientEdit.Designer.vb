@@ -22,6 +22,8 @@ Partial Class FrmPatientEdit
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.lblPersonalNumber = New System.Windows.Forms.Label()
+        Me.txtPersonalNumber = New System.Windows.Forms.TextBox()
         Me.lblFirstName = New System.Windows.Forms.Label()
         Me.txtFirstName = New System.Windows.Forms.TextBox()
         Me.lblLastName = New System.Windows.Forms.Label()
@@ -38,46 +40,63 @@ Partial Class FrmPatientEdit
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
+        'lblPersonalNumber
+        '
+        Me.lblPersonalNumber.Location = New System.Drawing.Point(20, 30)
+        Me.lblPersonalNumber.Name = "lblPersonalNumber"
+        Me.lblPersonalNumber.Size = New System.Drawing.Size(120, 25)
+        Me.lblPersonalNumber.TabIndex = 0
+        Me.lblPersonalNumber.Text = "პირადი ნომერი:"
+        Me.lblPersonalNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'txtPersonalNumber
+        '
+        Me.txtPersonalNumber.Location = New System.Drawing.Point(150, 30)
+        Me.txtPersonalNumber.MaxLength = 11
+        Me.txtPersonalNumber.Name = "txtPersonalNumber"
+        Me.txtPersonalNumber.Size = New System.Drawing.Size(300, 23)
+        Me.txtPersonalNumber.TabIndex = 1
+        '
         'lblFirstName
         '
-        Me.lblFirstName.Location = New System.Drawing.Point(20, 30)
+        Me.lblFirstName.Location = New System.Drawing.Point(20, 65)
         Me.lblFirstName.Name = "lblFirstName"
         Me.lblFirstName.Size = New System.Drawing.Size(120, 25)
-        Me.lblFirstName.TabIndex = 0
+        Me.lblFirstName.TabIndex = 2
         Me.lblFirstName.Text = "სახელი: *"
         Me.lblFirstName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'txtFirstName
         '
-        Me.txtFirstName.Location = New System.Drawing.Point(150, 30)
+        Me.txtFirstName.Location = New System.Drawing.Point(150, 65)
         Me.txtFirstName.MaxLength = 100
         Me.txtFirstName.Name = "txtFirstName"
         Me.txtFirstName.Size = New System.Drawing.Size(300, 23)
-        Me.txtFirstName.TabIndex = 1
+        Me.txtFirstName.TabIndex = 3
         '
         'lblLastName
         '
-        Me.lblLastName.Location = New System.Drawing.Point(20, 65)
+        Me.lblLastName.Location = New System.Drawing.Point(20, 100)
         Me.lblLastName.Name = "lblLastName"
         Me.lblLastName.Size = New System.Drawing.Size(120, 25)
-        Me.lblLastName.TabIndex = 2
+        Me.lblLastName.TabIndex = 4
         Me.lblLastName.Text = "გვარი: *"
         Me.lblLastName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'txtLastName
         '
-        Me.txtLastName.Location = New System.Drawing.Point(150, 65)
+        Me.txtLastName.Location = New System.Drawing.Point(150, 100)
         Me.txtLastName.MaxLength = 100
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.Size = New System.Drawing.Size(300, 23)
-        Me.txtLastName.TabIndex = 3
+        Me.txtLastName.TabIndex = 5
         '
         'lblDob
         '
-        Me.lblDob.Location = New System.Drawing.Point(20, 100)
+        Me.lblDob.Location = New System.Drawing.Point(20, 135)
         Me.lblDob.Name = "lblDob"
         Me.lblDob.Size = New System.Drawing.Size(120, 25)
-        Me.lblDob.TabIndex = 4
+        Me.lblDob.TabIndex = 6
         Me.lblDob.Text = "დაბ. თარიღი: *"
         Me.lblDob.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -85,17 +104,17 @@ Partial Class FrmPatientEdit
         '
         Me.dtpDob.CustomFormat = "dd.MM.yyyy"
         Me.dtpDob.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpDob.Location = New System.Drawing.Point(150, 100)
+        Me.dtpDob.Location = New System.Drawing.Point(150, 135)
         Me.dtpDob.Name = "dtpDob"
         Me.dtpDob.Size = New System.Drawing.Size(300, 23)
-        Me.dtpDob.TabIndex = 5
+        Me.dtpDob.TabIndex = 7
         '
         'lblGender
         '
-        Me.lblGender.Location = New System.Drawing.Point(20, 135)
+        Me.lblGender.Location = New System.Drawing.Point(20, 170)
         Me.lblGender.Name = "lblGender"
         Me.lblGender.Size = New System.Drawing.Size(120, 25)
-        Me.lblGender.TabIndex = 6
+        Me.lblGender.TabIndex = 8
         Me.lblGender.Text = "სქესი: *"
         Me.lblGender.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -103,54 +122,54 @@ Partial Class FrmPatientEdit
         '
         Me.cmbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbGender.FormattingEnabled = True
-        Me.cmbGender.Location = New System.Drawing.Point(150, 135)
+        Me.cmbGender.Location = New System.Drawing.Point(150, 170)
         Me.cmbGender.Name = "cmbGender"
         Me.cmbGender.Size = New System.Drawing.Size(300, 24)
-        Me.cmbGender.TabIndex = 7
+        Me.cmbGender.TabIndex = 9
         '
         'lblPhone
         '
-        Me.lblPhone.Location = New System.Drawing.Point(20, 170)
+        Me.lblPhone.Location = New System.Drawing.Point(20, 205)
         Me.lblPhone.Name = "lblPhone"
         Me.lblPhone.Size = New System.Drawing.Size(120, 25)
-        Me.lblPhone.TabIndex = 8
+        Me.lblPhone.TabIndex = 10
         Me.lblPhone.Text = "მობ. ნომერი:"
         Me.lblPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'txtPhone
         '
-        Me.txtPhone.Location = New System.Drawing.Point(150, 170)
+        Me.txtPhone.Location = New System.Drawing.Point(150, 205)
         Me.txtPhone.MaxLength = 9
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(300, 23)
-        Me.txtPhone.TabIndex = 9
+        Me.txtPhone.TabIndex = 11
         '
         'lblAddress
         '
-        Me.lblAddress.Location = New System.Drawing.Point(20, 205)
+        Me.lblAddress.Location = New System.Drawing.Point(20, 240)
         Me.lblAddress.Name = "lblAddress"
         Me.lblAddress.Size = New System.Drawing.Size(120, 25)
-        Me.lblAddress.TabIndex = 10
+        Me.lblAddress.TabIndex = 12
         Me.lblAddress.Text = "მისამართი:"
         Me.lblAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'txtAddress
         '
-        Me.txtAddress.Location = New System.Drawing.Point(150, 205)
+        Me.txtAddress.Location = New System.Drawing.Point(150, 240)
         Me.txtAddress.MaxLength = 500
         Me.txtAddress.Multiline = True
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(300, 50)
-        Me.txtAddress.TabIndex = 11
+        Me.txtAddress.TabIndex = 13
         '
         'btnSave
         '
         Me.btnSave.BackColor = System.Drawing.Color.Green
         Me.btnSave.Font = New System.Drawing.Font("Sylfaen", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.Location = New System.Drawing.Point(250, 370)
+        Me.btnSave.Location = New System.Drawing.Point(250, 405)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(100, 35)
-        Me.btnSave.TabIndex = 12
+        Me.btnSave.TabIndex = 14
         Me.btnSave.Text = "შენახვა"
         Me.btnSave.UseVisualStyleBackColor = False
         '
@@ -158,10 +177,10 @@ Partial Class FrmPatientEdit
         '
         Me.btnCancel.BackColor = System.Drawing.Color.Red
         Me.btnCancel.Font = New System.Drawing.Font("Sylfaen", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.Location = New System.Drawing.Point(360, 370)
+        Me.btnCancel.Location = New System.Drawing.Point(360, 405)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(100, 35)
-        Me.btnCancel.TabIndex = 13
+        Me.btnCancel.TabIndex = 15
         Me.btnCancel.Text = "გაუქმება"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
@@ -169,7 +188,7 @@ Partial Class FrmPatientEdit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(484, 421)
+        Me.ClientSize = New System.Drawing.Size(484, 456)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.txtAddress)
@@ -184,6 +203,8 @@ Partial Class FrmPatientEdit
         Me.Controls.Add(Me.lblLastName)
         Me.Controls.Add(Me.txtFirstName)
         Me.Controls.Add(Me.lblFirstName)
+        Me.Controls.Add(Me.txtPersonalNumber)
+        Me.Controls.Add(Me.lblPersonalNumber)
         Me.Font = New System.Drawing.Font("Sylfaen", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -197,6 +218,8 @@ Partial Class FrmPatientEdit
 
     End Sub
 
+    Friend WithEvents lblPersonalNumber As Label
+    Friend WithEvents txtPersonalNumber As TextBox
     Friend WithEvents lblFirstName As Label
     Friend WithEvents txtFirstName As TextBox
     Friend WithEvents lblLastName As Label
